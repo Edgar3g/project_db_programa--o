@@ -1,0 +1,45 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+# Arquivos de compilação
+build/
+
+# Arquivos gerados pelo IDE
+.idea/
+
+# Arquivos específicos do sistema operacional
+*.iml
+*.iws
+*.ipr
+
+# Logs
+*.log
+
+# Configurações do Gradle
+gradle-wrapper.jar
+gradle-wrapper.properties
+.gradle/
+
+# Arquivos de configuração do Eclipse
+.settings/
+
+# Arquivos temporários
+*.swp
+
+# Arquivos gerados pela execução do código
+out/
+
+# Dependências do Gradle
+build.gradle
+build.gradle.kts
+
+# Dependências do Eclipse
+.classpath
+.project
+.settings/
