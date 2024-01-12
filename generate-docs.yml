@@ -1,0 +1,31 @@
+name: Geração de Documentação
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configurar JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '20'
+
+    - name: Checkout do Código
+      uses: actions/checkout@v2
+
+    - name: Geração da Documentação
+      run: |
+        ./gradlew clean javadoc  # Substitua pelo seu comando Gradle para limpar e gerar a documentação JavaDoc
+
+    - name: Atualizar Documentação no GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.DEPLOY_KEY }}
+        publish_dir: ./build/docs/javadoc  # Substitua pelo diretório onde a documentação é gerada
+        cname: your-custom-domain.com  # Opcional: Substitua pelo seu domínio personalizado, se aplicável

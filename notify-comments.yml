@@ -1,0 +1,26 @@
+name: Notificações e Comentários
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  notify-comments:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Configurar JDK
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '20'
+
+    - name: Compilar e Executar Testes
+      run: |
+        ./gradlew clean build  # Substitua pelo seu comando Gradle para compilar e construir o aplicativo
+        ./gradlew test  # Substitua pelo seu comando Gradle para executar os testes
+
+    - name: Enviar Notificação
+      run: echo "Olá! Este pull request foi aberto ou atualizado."
