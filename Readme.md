@@ -3,12 +3,12 @@
 
 ## Descrição e Features
 
-O Sistema de Gestão de Estoque é uma aplicação desenvolvida para um armazém de bebidas localizado no Benfica. Ele visa otimizar e automatizar o controle dos produtos, vendas, clientes, e funcionários do armazém.
+O Sistema de Gestão de Estoque, é uma aplicação desenvolvida para um armazém de bebidas, localizado no Benfica. Ele visa otimizar e automatizar o controle dos produtos, vendas, clientes, e funcionários do armazém.
 Requisitos Funcionais:
 
 ### O sistema deve atender aos seguintes requisitos funcionais:
 
-   - CRUD (Criação, Leitura, Atualização e Delete) dos Produtos: Permitir a gestão completa dos produtos vendidos no armazém, incluindo a adição, consulta, atualização e exclusão de registros.
+- CRUD (Criação, Leitura, Atualização e Delete) dos Produtos: Permitir a gestão completa dos produtos vendidos no armazém, incluindo a adição, consulta, atualização e exclusão de registros.
 
 - Relatórios de Venda: Gerar relatórios de venda diários, semanais e trimestrais para fornecer uma visão abrangente das atividades comerciais.
 
