@@ -6,7 +6,7 @@ on:
       - opened
       - synchronize
 jobs:
-  generate-db-script:
+  notify-comments:
     runs-on: ubuntu-latest
 
     steps:
