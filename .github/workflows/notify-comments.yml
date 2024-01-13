@@ -17,10 +17,32 @@ jobs:
         distribution: 'adopt'
         java-version: '20'
 
-    - name: Compilar e Executar Testes
+    - name: Analisar Mensagens de Commit
+      id: commit_analysis
       run: |
-        ./gradlew clean build  # Substitua pelo seu comando Gradle para compilar e construir o aplicativo
-        ./gradlew test  # Substitua pelo seu comando Gradle para executar os testes
+        COMMIT_MSG=$(git log --format=%B -n 1 $GITHUB_SHA)
+        if [[ $COMMIT_MSG =~ (fix|feat) ]]; then
+          echo "Testes serão executados."
+          echo "::set-output name=run_tests::true"
+        elif [[ $COMMIT_MSG =~ (doc|chore) ]]; then
+          echo "Pull request aceito sem a execução de testes."
+          echo "::set-output name=run_tests::false"
+        else
+          echo "Mensagem de commit não convencional. Pull request será rejeitado."
+          echo "::set-output name=run_tests::reject"
+        fi
+
+    - name: Verificar Conflitos
+      id: conflict_check
+      run: |
+        git fetch origin $GITHUB_BASE_REF
+        git diff --name-only origin/$GITHUB_BASE_REF
+
+    - name: Compilar e Executar Testes
+      if: steps.commit_analysis.outputs.run_tests == 'true' && steps.conflict_check.outputs != ''
+      run: |
+        ./gradlew clean build
+        ./gradlew test
 
     - name: Enviar Notificação
       run: echo "Olá! Este pull request foi aberto ou atualizado."
