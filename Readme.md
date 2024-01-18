@@ -63,3 +63,8 @@ Requisitos Funcionais:
 5. **Funcionário - Venda:**
    - Um Funcionário pode estar associado a várias Vendas.
    - Uma Venda é realizada por um único Funcionário.
+
+## Taferas Realizadas
+
+   ## ER - Entidade Relacional
+   ![imagem do Modelo Entidade Relacional](./database_er/Er.png)

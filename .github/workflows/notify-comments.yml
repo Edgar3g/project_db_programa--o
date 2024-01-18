@@ -5,12 +5,16 @@ on:
     types:
       - opened
       - synchronize
-
 jobs:
   notify-comments:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout do Código
+      uses: actions/checkout@v2
+      with:
+        path: ./  # Especifica o diretório de checkout como a raiz do repositório
+
     - name: Configurar JDK
       uses: actions/setup-java@v2
       with:
