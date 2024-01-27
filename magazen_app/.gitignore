@@ -6,6 +6,8 @@ build/
 .env.example
 .env
 
+.env
+.env.example
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
