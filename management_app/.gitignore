@@ -1,5 +1,5 @@
 
-.env
+src/main/java/aej/database/.env
 .env.example
 
 .gradle
